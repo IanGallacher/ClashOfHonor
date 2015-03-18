@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerSfx : Bolt.EntityBehaviour<IPlayerState> {
+public class PlayerSfx : MonoBehaviour {
   int prevHealth;
   float playTime;
 

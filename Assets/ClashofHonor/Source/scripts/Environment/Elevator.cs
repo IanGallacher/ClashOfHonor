@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Elevator : Bolt.EntityBehaviour<IElevatorState> {
+public class Elevator : MonoBehaviour {
 
   [SerializeField]
   Vector3 start;

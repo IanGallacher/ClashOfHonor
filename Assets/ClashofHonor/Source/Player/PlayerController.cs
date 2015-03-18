@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 
-public class PlayerController : Bolt.EntityEventListener<IPlayerState>
+public class PlayerController : MonoBehaviour
 {
 	const float MOUSE_SENSEITIVITY = 2f;
 	

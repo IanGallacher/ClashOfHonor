@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NZZ_NetworkCharacter: Bolt.EntityEventListener<IPlayerState> {
+public class NZZ_NetworkCharacter: MonoBehaviour {
 	public float speed = 10f;
 	public float jumpStrength = 700.0f;
 	public float tilt;

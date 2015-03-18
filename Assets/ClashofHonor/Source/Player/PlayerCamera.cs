@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerCamera : BoltSingletonPrefab<PlayerCamera> {
+public class PlayerCamera : MonoBehaviour {
   // damp velocity of camera
   Vector3 _velocity;
 
@@ -114,7 +114,7 @@ public class PlayerCamera : BoltSingletonPrefab<PlayerCamera> {
     }
   }
 
-  public void SetTarget(BoltEntity entity) {
+  public void SetTarget(GameObject entity) {
     _target = entity.transform;
     UpdateCamera(false);
   }

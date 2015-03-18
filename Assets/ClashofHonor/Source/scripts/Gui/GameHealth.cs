@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameHealth : Bolt.GlobalEventListener {
+public class GameHealth : MonoBehaviour {
   BoltEntity me;
   IPlayerState meState;
 

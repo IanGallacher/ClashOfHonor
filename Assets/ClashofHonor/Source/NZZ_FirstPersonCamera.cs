@@ -23,7 +23,7 @@ public class NZZ_FirstPersonCamera : MonoBehaviour {
 		}
 	}
 	
-	public void SetTarget(BoltEntity entity) {
+	public void SetTarget(GameObject entity) {
 		target = entity.transform;
 	}
 }

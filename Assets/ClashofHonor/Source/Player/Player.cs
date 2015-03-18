@@ -10,10 +10,11 @@ public partial class Player : IDisposable {
 	public const byte TEAM_BLUE = 2;
 	
 	public string name;
-	public BoltEntity entity;
-	public BoltEntity lefthandentity;
-	public BoltEntity righthandentity;
+	public GameObject entity;
+	public GameObject lefthandentity;
+	public GameObject righthandentity;
 	public BoltConnection connection;
+	public int health;
 	
 	public IPlayerState state {
 		get { return entity.GetState<IPlayerState>(); }
@@ -41,15 +42,10 @@ public partial class Player : IDisposable {
 	}
 	
 	internal void Spawn() {
-		if (entity) {
-			using (var mod = state.Modify()) {
-				mod.Dead = false;
-				mod.health = 100;
-			}
-			
-			// teleport
-			entity.transform.position = SpawnFixedLocation();
-		}
+		dead = false;
+		health = 100;
+
+		entity.transform.position = SpawnFixedLocation();
 	}
 	public void Dispose() {
 		players.Remove(this);
