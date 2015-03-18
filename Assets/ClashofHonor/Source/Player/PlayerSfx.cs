@@ -31,22 +31,22 @@ public class PlayerSfx : MonoBehaviour {
     }
   }
 
-  public override void ControlGained() {
-    prevHealth = 100;
-
-    // assign callback
-    state.AddCallback("health",  HealthChanged);
-  }
-
-  public override void ControlLost() {
-    state.RemoveCallback("health",  HealthChanged);
-  }
-
-  void HealthChanged() {
-    if ((state.health < prevHealth) && hit) {
-      _sourceHit.PlayOneShot(hit);
-    }
-
-    prevHealth = state.health;
-  }
+//  public override void ControlGained() {
+//    prevHealth = 100;
+//
+//    // assign callback
+//    state.AddCallback("health",  HealthChanged);
+//  }
+//
+//  public override void ControlLost() {
+//    state.RemoveCallback("health",  HealthChanged);
+//  }
+//
+//  void HealthChanged() {
+//    if ((state.health < prevHealth) && hit) {
+//      _sourceHit.PlayOneShot(hit);
+//    }
+//
+//    prevHealth = state.health;
+//  }
 }

@@ -89,7 +89,7 @@ public class PlayerMotor : MonoBehaviour {
 	void Move(Vector3 velocity) {
 		bool isGrounded = false;
 		
-		isGrounded = isGrounded || _cc.Move(velocity * BoltNetwork.frameDeltaTime) == CollisionFlags.Below;
+		isGrounded = isGrounded || _cc.Move(velocity * Time.deltaTime) == CollisionFlags.Below;
 		isGrounded = isGrounded || _cc.isGrounded;
 		isGrounded = isGrounded || Physics.CheckSphere(sphere, _cc.radius, layerMask);
 		
@@ -127,7 +127,7 @@ public class PlayerMotor : MonoBehaviour {
 		}
 		//} else {
 		if (!_state.isGrounded) {
-			_state.velocity.y += gravityForce * BoltNetwork.frameDeltaTime;
+			_state.velocity.y += gravityForce * Time.deltaTime;
 		}
 		//}
 		
@@ -178,11 +178,11 @@ public class PlayerMotor : MonoBehaviour {
 	
 	float ApplyDrag(float value, float drag) {
 		if (value < 0) {
-			return Mathf.Min(value + (drag * BoltNetwork.frameDeltaTime), 0f);
+			return Mathf.Min(value + (drag * Time.deltaTime), 0f);
 		}
 		
 		else if (value > 0) {
-			return Mathf.Max(value - (drag * BoltNetwork.frameDeltaTime), 0f);
+			return Mathf.Max(value - (drag * Time.deltaTime), 0f);
 		}
 		
 		return value;
